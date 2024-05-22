@@ -1,4 +1,4 @@
--[] Definire un array di oggetti; ogni oggetto rappresenta un film o serie tv, che è caratterizzato da: 
+-[x] Definire un array di oggetti; ogni oggetto rappresenta un film o serie tv, che è caratterizzato da: 
 - title,
 - year, 
 - genre, 
