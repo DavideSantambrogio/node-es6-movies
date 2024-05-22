@@ -39,6 +39,24 @@ http.createServer(function (req, res) {
     });
     res.write(`</ul>`);
 
+    // Funzione per ottenere la lista di tutti i generi dei film senza ripetizioni
+    function getUniqueGenres(movieList) {
+        const genres = new Set(); // Utilizziamo un Set per garantire che i generi non si ripetano
+        movieList.forEach(movie => genres.add(movie.genre)); // Aggiungiamo ogni genere alla lista dei generi
+        return Array.from(genres); // Convertiamo il Set in un array per poterlo utilizzare facilmente
+    }
+
+    // Ottieni la lista dei generi senza ripetizioni
+    const uniqueGenres = getUniqueGenres(mediaInstances);
+
+    // Stampa la lista dei generi
+    res.write(`<h2>Lista dei generi dei film</h2>`);
+    res.write(`<ul>`);
+    uniqueGenres.forEach(genre => {
+        res.write(`<li>${genre}</li>`);
+    });
+    res.write(`</ul>`);
+
     // Funzione per calcolare la media dei voti dei film per un determinato genere
     function calculateAverageRatingByGenre(filmList, genre) {
         // Filtra la lista dei film per il genere specificato
@@ -60,7 +78,7 @@ http.createServer(function (req, res) {
     }
 
     // Genere desiderato per calcolare la media dei voti
-    const desiredGenre = "action"; // Puoi sostituire questo valore con il genere desiderato per calcolare la media dei voti
+    const desiredGenre = "Action";
     const averageRatingByGenre = calculateAverageRatingByGenre(mediaLibrary, desiredGenre);
 
     // Stampa la media dei voti per il genere specificato
