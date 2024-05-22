@@ -6,6 +6,8 @@ require('dotenv').config(); // Carica le variabili d'ambiente da .env
 const port = process.env.PORT || 8080;
 const host = process.env.HOST || "localhost";
 
+
+
 http.createServer(function (req, res) {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(`hello world`);
