@@ -85,6 +85,24 @@ http.createServer(function (req, res) {
     res.write(`<h2>Media per genere ${desiredGenre}</h2>`);
     res.write(`<p>La media dei voti per ${desiredGenre} è: ${averageRatingByGenre}</p>`);
 
+    // Funzione per filtrare i film in base al genere e ritornare un array con i risultati di toString()
+    function filterMoviesByGenre(movieList, genre) {
+        return movieList.filter(movie => movie.type === "movie" && movie.genre === genre).map(movie => movie.toString());
+    }
+
+    
+    // Esempio di utilizzo della funzione per ottenere i film di un genere
+    const filterGenre = "Action"; 
+    const moviesByGenre = filterMoviesByGenre(mediaInstances, filterGenre);
+
+    // Stampa i film del genere specificato
+    res.write(`<h2>Film del genere ${filterGenre}</h2>`);
+    res.write(`<ul>`);
+    moviesByGenre.forEach(movie => {
+        res.write(`<li>${movie}</li>`);
+    });
+    res.write(`</ul>`);
+
     res.end(); // Fine della risposta
 }).listen(port, host, () => {
     const serverUrl = `http://${host}:${port}`;
