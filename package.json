@@ -4,7 +4,8 @@
   "description": "-[] Definire un array di oggetti; ogni oggetto rappresenta un film o serie tv, che è caratterizzato da: \r - title,\r - year, \r - genre, \r - rating, \r - type (movie o tv), \r - seasons (solo per serie tv).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
