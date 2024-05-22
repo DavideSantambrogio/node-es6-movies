@@ -15,6 +15,6 @@
 - [x] Creiamo una funzione che filtri i film in base ad un genere passato come argomento e ne ritorni un array con all'interno il risultato della funzione toString() di ogni film.
 - [x] Eseguire tutto il codice da terminale tramite NodeJs e stampiamo nel terminale il risultato delle varie funzioni.
 BONUS:
-- [] Rendere le proprietà delle classi private e creare dei setter e dei getter per potervi accedere.
+- [x] Rendere le proprietà delle classi private e creare dei setter e dei getter per potervi accedere.
 - [] Creare una classe Cart dove poter salvare i film che si intende noleggiare. Tramite delle funzioni, poter aggiungere o togliere dei film dal carrello. Creare poi una funzione che stampi il costo totale dei film da noleggiare, dove per ogni film occorre specificare un prezzo fisso di 3.99
 Buon lavoro!
